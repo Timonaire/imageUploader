@@ -1,0 +1,17 @@
+{
+  "name": "imageuploadapi",
+  "version": "1.0.0",
+  "description": "Uploads Images",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Timothy Ikechukwu",
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary": "^1.41.2",
+    "mongoose": "^8.1.0",
+    "multer": "^1.4.5-lts.1",
+    "pino": "^8.17.2"
+  }
+}
