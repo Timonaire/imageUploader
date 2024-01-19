@@ -13,9 +13,8 @@ class ImageController {
         }
 
         //confirming the components of the file being uploaded
-        const { avatar, filename, path, mimetype, size } = req.file;
+        const { filename, path, mimetype, size } = req.file;
         const uploadedImage: IImage = {
-            avatar,
             filename,
             filepath: path,
             mimetype,
