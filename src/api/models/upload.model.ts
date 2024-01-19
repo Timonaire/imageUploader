@@ -1,6 +1,8 @@
+//importing the necessary models and packages
 import { model, Schema } from 'mongoose'
 import { IImage } from '../interfaces/index.interface'
 
+//Defining the schemas
 const uploadsSchema = new Schema<IImage>({
      filename: {
         type: String,
@@ -9,6 +11,9 @@ const uploadsSchema = new Schema<IImage>({
       filepath: {
         type: String,
         required: true
+      },
+      avatar: {
+        type: String
       },
       mimetype: {
         type: String,

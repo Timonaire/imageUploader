@@ -1,13 +1,12 @@
 export interface IImage{
-    _id: string;
+    avatar: string;
     filename: string;
-    url: string;
     filepath: string;
     mimetype: string;
     size: number;
 }
 
-export interface ICreateUpload {
+export interface IUploadImage {
     filename: string;
     avatar: string;
 }

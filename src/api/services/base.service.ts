@@ -1,27 +1,32 @@
+//Importing the necessary models and packages
 import { Model } from 'mongoose';
-import { IImage, IGenericObject } from '../interfaces/index.interface';
-import { ICreateUpload } from '../interfaces/index.interface';
+import { IImage, IGenericObject, IUploadImage } from '../interfaces/index.interface';
 
+//Creating a general service class
 class BaseService {
     constructor(public model: Model<IImage
 >) {
         this.model = model;
     }
 
-    async create(data: ICreateUpload) {
+    //For creating a file
+    async create(data: IUploadImage) {
         return this.model.create(data);
     }
 
+    //For deleting a single file
     async deleteOne(id: string) {
         return await this.model.findByIdAndDelete({ _id: id });
     }
 
+    //For searching for a single file
     async findOne(filter: Partial<IImage
 >) {
         return await this.model.findOne({ deleted: false, ...filter})
         .sort({ createdAt: -1 });
     }
 
+    //For getting all available files
     async findAll(filter: Partial<IImage
 > & IGenericObject) {
         const page = filter?.page ? parseInt(filter?.page) : 1;

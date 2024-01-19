@@ -1,6 +1,8 @@
+//Import necessay models and packages
 import { Request } from 'express'
 import { IImage } from "./upload.interface";
 
+//This is to cover for type errors
 export interface IGenericObject {
     [key: string]: any
 }
@@ -15,4 +17,4 @@ export interface IPaginate {
 }
 
 export type ICustomValidationFields = (value: any, helpers: any, fieldToCheck: any, valueToCheck: any) => any
-export { IImage, ICreateUpload} from "./upload.interface"
+export { IImage, IUploadImage} from "./upload.interface"

@@ -4,14 +4,24 @@
   "description": "Uploads Images",
   "main": "server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon -r dotenv/config ./src/api/server.ts",
+    "build": "npm install",
+    "start": "tsc && node ./build/api/server.js"
   },
   "author": "Timothy Ikechukwu",
   "license": "ISC",
   "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/multer": "^1.4.11",
+    "@types/node": "^20.11.5",
     "cloudinary": "^1.41.2",
+    "dotenv": "^16.3.1",
+    "express-async-errors": "^3.1.1",
+    "mongodb": "^6.3.0",
     "mongoose": "^8.1.0",
     "multer": "^1.4.5-lts.1",
-    "pino": "^8.17.2"
+    "nodemon": "^3.0.3",
+    "pino": "^8.17.2",
+    "ts-node": "^10.9.2"
   }
 }

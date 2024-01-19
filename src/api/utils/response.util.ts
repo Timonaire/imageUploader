@@ -1,9 +1,10 @@
+//Import necessary models and packages
 import { Response, Request } from "express";
 import { IGenericObject, IPaginate } from "../interfaces/index.interface";
 
 export default function sendResponse(
     res: Response,
-    req: Request,
+   // req: Request,
     status: number,
     success: boolean,
     message : string | IGenericObject,
