@@ -1,18 +1,14 @@
 //Import necessary models and packages
 import mongoose from 'mongoose';
 import { logger } from '../api/utils/index.util'
-import dotenv from 'dotenv';
-dotenv.config();
 
 
 //Mongodb setup
 export default (function database() {
-  const startdb = () => {
+  const startdb = async () => {
     mongoose.set('strictQuery', false);
-    mongoose
-      .connect(<string>process.env.MONGODB_URI, {//MONGODB_URI details can be found in dotenv file
-        dbName: process.env.DB_NAME,//DB_NAME details can be found in dotenv file
-      })
+    await mongoose
+      .connect(<string> process.env.MONGODB_URI)
       .then(() => {
         logger.info('Successfully connected to the database...');
       })

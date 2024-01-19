@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon -r dotenv/config ./src/api/server.ts",
     "build": "npm install",
-    "start": "tsc && node ./build/api/server.js"
+    "start": "tsc && node -r dotenv/config ./build/api/server.js"
   },
   "author": "Timothy Ikechukwu",
   "license": "ISC",
