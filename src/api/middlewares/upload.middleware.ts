@@ -32,3 +32,4 @@ export default async (req: Request, res: Response) => {
         
     return sendResponse(res, 200, true, 'File(s) uploaded successfully!',uploads )
 }
+
