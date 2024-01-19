@@ -1,6 +1,8 @@
+//Import necessary models and packages
 import { v2 as cloudinary } from "cloudinary";
 import { IImage } from "../api/interfaces/index.interface";
 
+//cloudinary configuration
 cloudinary.config({
     cloud_name: process.env.CLOUD_NAME,
     api_key: process.env.API_KEY,
