@@ -1,9 +1,10 @@
-import { Router } from 'express'
-import { authenticate, uploadFiles } from '../../middlewares/index.middleware'
-import { upload } from '../../../configs/index.config'
+import express from 'express';
+import {ImageController }from '../controllers/index.controller';
+import { upload} from '../../configs/index.config'
 
-const uploadRouter = Router()
+const uploadRouter = express.Router();
 
-uploadRouter.post('/upload', [authenticate, upload.array('images')], uploadFiles)
+// Route for image upload
+uploadRouter.post('/upload', upload.single('image'), ImageController.uploadImage);
 
-export default uploadRouter
+export default uploadRouter;
